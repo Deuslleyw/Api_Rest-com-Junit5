@@ -1,6 +1,7 @@
 package com.deusley.api_rest.services.impl;
 
 import com.deusley.api_rest.domain.User;
+import com.deusley.api_rest.exceptions.ObjectNotFoundException;
 import com.deusley.api_rest.repositories.UserRepository;
 import com.deusley.api_rest.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findById(Integer id) {
         Optional<User> obj = rep.findById(id);
-        return obj.orElse(null);
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Não Encontrado,Tente Novamente!"));
     }
 }
