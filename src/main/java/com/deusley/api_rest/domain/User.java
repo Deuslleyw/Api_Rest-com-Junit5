@@ -13,6 +13,7 @@ import java.util.Objects;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "TB_USUARIOS")
 public class User {
 
     @Id
