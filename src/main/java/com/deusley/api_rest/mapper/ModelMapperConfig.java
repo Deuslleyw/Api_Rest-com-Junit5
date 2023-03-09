@@ -1,4 +1,4 @@
-package com.deusley.api_rest.config;
+package com.deusley.api_rest.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
