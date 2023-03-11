@@ -2,6 +2,7 @@ package com.deusley.api_rest.services.impl;
 
 import com.deusley.api_rest.domain.User;
 import com.deusley.api_rest.dto.UserDTO;
+import com.deusley.api_rest.exceptions.DataIntegratyViolationException;
 import com.deusley.api_rest.exceptions.ObjectNotFoundException;
 import com.deusley.api_rest.repositories.UserRepository;
 import com.deusley.api_rest.services.UserService;
@@ -33,6 +34,14 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User create(UserDTO obj) {
+        findByEmail(obj);
         return rep.save(mapper.map(obj, User.class));
     }
+    private void findByEmail(UserDTO obj){
+        Optional<User> user = rep.findByEmail(obj.getEmail());
+        if(user.isPresent()){
+            throw new DataIntegratyViolationException("Esse email ja existe");
+        }
+    }
+
 }
