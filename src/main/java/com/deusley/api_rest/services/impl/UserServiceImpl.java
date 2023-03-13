@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findById(Integer id) {
         Optional<User> obj = rep.findById(id);
-        return obj.orElseThrow(() -> new ObjectNotFoundException("Não Encontrado,Tente Novamente!"));
+        return obj.orElseThrow(() -> new ObjectNotFoundException("Ops! Objeto não encontrado"));
     }
 
     public List<User> findAll(){
@@ -44,11 +44,16 @@ public class UserServiceImpl implements UserService {
         return rep.save(mapper.map(obj,User.class));
     }
 
+    @Override
+    public void delete(Integer id) {
+        findById(id);
+        rep.deleteById(id);
+    }
+
     private void findByEmail(UserDTO obj){
         Optional<User> user = rep.findByEmail(obj.getEmail());
         if(user.isPresent() && !user.get().getId().equals(obj.getId())){
-            throw new DataIntegratyViolationException("Esse email ja existe");
+            throw new DataIntegratyViolationException("Esse email ja esta cadastrado");
         }
     }
-
 }
