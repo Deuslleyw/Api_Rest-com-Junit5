@@ -2,20 +2,19 @@ package com.deusley.api_rest.services.impl;
 
 import com.deusley.api_rest.domain.User;
 import com.deusley.api_rest.dto.UserDTO;
+import com.deusley.api_rest.exceptions.ObjectNotFoundException;
 import com.deusley.api_rest.repositories.UserRepository;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 @SpringBootTest
 class UserServiceImplTest {
@@ -47,17 +46,29 @@ class UserServiceImplTest {
 
     @Test
     void whenFindByIdThenReturnAnUserInstance() {
-        Mockito.when(repository.findById(Mockito.anyInt())).thenReturn(optionalUser);                 // scenario
+        when(repository.findById(anyInt())).thenReturn(optionalUser);                 // scenario
 
-        User response = service.findById(ID);                                                        //  action
+        User response = service.findById(ID);                                        //  action
 
-        Assertions.assertNotNull(response);
-        Assertions.assertEquals(User.class, response.getClass());                                  //  verification
-        Assertions.assertEquals(ID, response.getId());
-        Assertions.assertEquals(NAME, response.getName());
-        Assertions.assertEquals(EMAIL, response.getEmail());
-        Assertions.assertEquals(PASSWORD, response.getPassword());
+        assertNotNull(response);
+        assertEquals(User.class, response.getClass());                             //  verification
+        assertEquals(ID, response.getId());
+        assertEquals(NAME, response.getName());
+        assertEquals(EMAIL, response.getEmail());
+        assertEquals(PASSWORD, response.getPassword());
+    }
 
+    @Test
+    void whenFindByIdThenReturnAnObjectNotFoundException(){
+        when(repository.findById(anyInt())).thenThrow(new ObjectNotFoundException("Ops! Objeto não encontrado"));
+
+        try{
+            service.findById(ID);
+        }catch (Exception er){
+
+            assertEquals(ObjectNotFoundException.class, er.getClass());
+            assertEquals("Ops! Objeto não encontrado", er.getMessage());
+        }
     }
 
     @Test
