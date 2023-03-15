@@ -2,6 +2,7 @@ package com.deusley.api_rest.services.impl;
 
 import com.deusley.api_rest.domain.User;
 import com.deusley.api_rest.dto.UserDTO;
+import com.deusley.api_rest.exceptions.DataIntegratyViolationException;
 import com.deusley.api_rest.exceptions.ObjectNotFoundException;
 import com.deusley.api_rest.repositories.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -91,7 +92,33 @@ class UserServiceImplTest {
     }
 
     @Test
-    void create() {
+    void whenCreateThenReturnSuccess() {
+        when(repository.save(any())).thenReturn(user);
+
+        User response  = service.create(userDTO);
+
+        assertNotNull(response);
+        assertEquals(User.class, response.getClass());
+        assertEquals(ID, response.getId());
+        assertEquals(NAME, response.getName());
+        assertEquals(EMAIL, response.getEmail());
+        assertEquals(PASSWORD, response.getPassword());
+
+    }
+
+    @Test
+    void whenCreateThenReturnDataIntegrityViolationEx() {
+
+        when(repository.findByEmail(anyString())).thenReturn(optionalUser);
+
+        try {
+            optionalUser.get().setId(13);
+            service.create(userDTO);
+        }catch (Exception er){
+            assertEquals(DataIntegratyViolationException.class, er.getClass());
+            assertEquals("Esse email ja esta cadastrado", er.getMessage());
+        }
+
     }
 
     @Test
