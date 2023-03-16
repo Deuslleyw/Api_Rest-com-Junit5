@@ -5,7 +5,6 @@ import com.deusley.api_rest.dto.UserDTO;
 import com.deusley.api_rest.exceptions.DataIntegratyViolationException;
 import com.deusley.api_rest.exceptions.ObjectNotFoundException;
 import com.deusley.api_rest.repositories.UserRepository;
-import org.hibernate.annotations.OnDelete;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
