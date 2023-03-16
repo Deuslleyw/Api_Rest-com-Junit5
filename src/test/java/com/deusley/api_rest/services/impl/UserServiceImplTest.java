@@ -5,6 +5,7 @@ import com.deusley.api_rest.dto.UserDTO;
 import com.deusley.api_rest.exceptions.DataIntegratyViolationException;
 import com.deusley.api_rest.exceptions.ObjectNotFoundException;
 import com.deusley.api_rest.repositories.UserRepository;
+import org.hibernate.annotations.OnDelete;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -150,7 +151,27 @@ class UserServiceImplTest {
     }
 
     @Test
-    void delete() {
+    void mustSuccessfullyDelete() {
+        when(repository.findById(anyInt())).thenReturn(optionalUser);
+        doNothing().when(repository).deleteById(anyInt());
+
+        service.delete(ID);
+
+        verify(repository, times(1)).deleteById(anyInt());
+    }
+
+    @Test
+    void  MustThrowTheExceptionObjectNotFoundExceptionOnDelete (){
+        when(repository.findById(anyInt())).thenThrow(new ObjectNotFoundException("Ops! Objeto não encontrado"));
+
+        try{
+            service.delete(ID);
+        }catch (Exception err){
+
+            assertEquals(ObjectNotFoundException.class, err.getClass());
+            assertEquals("Ops! Objeto não encontrado", err.getMessage());
+        }
+
     }
 
     private void startUsers(){
