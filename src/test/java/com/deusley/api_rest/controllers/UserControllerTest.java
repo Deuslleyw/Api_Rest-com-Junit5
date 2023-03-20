@@ -30,6 +30,9 @@ class UserControllerTest {
     public static final String PASSWORD = "123";
     public static final int INDEX = 0;
 
+    private User user = new User();
+    private UserDTO userDTO = new UserDTO();
+
     @InjectMocks
     private UserController controller;
 
@@ -39,11 +42,7 @@ class UserControllerTest {
     @Mock
     private ModelMapper mapper;
 
-    private User user;
-    private UserDTO userDTO;
-
     UserControllerTest() {}
-
 
     @BeforeEach
     void setUp() {
