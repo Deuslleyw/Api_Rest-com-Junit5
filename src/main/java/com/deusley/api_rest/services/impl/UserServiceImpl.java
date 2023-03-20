@@ -2,7 +2,7 @@ package com.deusley.api_rest.services.impl;
 
 import com.deusley.api_rest.domain.User;
 import com.deusley.api_rest.dto.UserDTO;
-import com.deusley.api_rest.exceptions.DataIntegratyViolationException;
+import com.deusley.api_rest.exceptions.DataIntegrityViolationException;
 import com.deusley.api_rest.exceptions.ObjectNotFoundException;
 import com.deusley.api_rest.repositories.UserRepository;
 import com.deusley.api_rest.services.UserService;
@@ -53,7 +53,7 @@ public class UserServiceImpl implements UserService {
     private void findByEmail(UserDTO obj){
         Optional<User> user = rep.findByEmail(obj.getEmail());
         if(user.isPresent() && !user.get().getId().equals(obj.getId())){
-            throw new DataIntegratyViolationException("Esse email ja esta cadastrado");
+            throw new DataIntegrityViolationException("Esse email ja esta cadastrado");
         }
     }
 }
