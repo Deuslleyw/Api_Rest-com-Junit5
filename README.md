@@ -20,9 +20,12 @@ linhas e métodos, garantindo a integridade e funcionalidade do sistema!
 * [SpringBoot](https://spring.io/projects/spring-boot) - Framework Java
 
 <div style="display: inline_block"><br>
-  <img align="center" alt="Steh-Java" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
-  <img align="center" alt="Steh-Spring" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg">
-  <img align="center" alt="Steh-Postgres" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg">
+
+  <img align="center" alt="Steh-Java" height="100" width="90" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+  
+  <img align="center" alt="Steh-Spring" height="100" width="90" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg">
+  
+  <img align="center" alt="Steh-Postgres" height="100" width="90" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg">
 
 
 -----------------------------------------------------------------------------
