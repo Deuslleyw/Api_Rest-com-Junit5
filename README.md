@@ -80,7 +80,7 @@ linhas e métodos, garantindo a integridade e funcionalidade do sistema!
 ------------------------------------------------------------------------------
 ## 📦 Desenvolvido Por
 
-    * Deusley Diego 
+   <image src = "https://raw.githubusercontent.com/Deuslleyw/gif/main/DEUSLEY.png">
 
 * https://github.com/Deuslleyw
 
