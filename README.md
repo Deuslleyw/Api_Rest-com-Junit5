@@ -81,16 +81,10 @@ linhas e métodos, garantindo a integridade e funcionalidade do sistema!
 ------------------------------------------------------------------------------
 ## 📦 Desenvolvido Por
 
-<image src = "https://github.com/Deuslleyw/gif/blob/main/DEUSLEY%20(2).gif?raw=true">
+<image src = "https://github.com/Deuslleyw/gif/blob/main/DEUSLEY%20(2).gif?raw=true" >
 
 
 * https://github.com/Deuslleyw
 
 
-* Email: Deuslleyw@hotmail.com
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> b7ab4ff3cdbba5b625d418a60b4f5bac54a91960
+* E-mail: Deuslleyw@hotmail.com
