@@ -10,7 +10,6 @@ construido os testes unitários com Junit5, mockito,
 testando e cobrindo 
 linhas e métodos, garantindo a integridade e funcionalidade do sistema!
 
-* Java 17 LTS
 -----------------------------------------------------------------------------
 
 ## 🛠️ Ferramentas
@@ -20,6 +19,15 @@ linhas e métodos, garantindo a integridade e funcionalidade do sistema!
 
 * [Intellij](https://www.jetbrains.com/pt-br/idea/) - IDE utilizada
 * [SpringBoot](https://spring.io/projects/spring-boot) - Framework Java
+
+<div style="display: inline_block"><br>
+
+  <img align="center" alt="Steh-Java" height="100" width="90" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+  
+  <img align="center" alt="Steh-Spring" height="100" width="90" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg">
+  
+  <img align="center" alt="Steh-Postgres" height="100" width="90" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original-wordmark.svg">
+
 
 -----------------------------------------------------------------------------
 ## EXEMPLOS ENDPOINTS
@@ -73,9 +81,16 @@ linhas e métodos, garantindo a integridade e funcionalidade do sistema!
 ------------------------------------------------------------------------------
 ## 📦 Desenvolvido Por
 
-    * Deusley Diego 
+<image src = "https://github.com/Deuslleyw/gif/blob/main/DEUSLEY%20(2).gif?raw=true">
+
 
 * https://github.com/Deuslleyw
 
 
 * Email: Deuslleyw@hotmail.com
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> b7ab4ff3cdbba5b625d418a60b4f5bac54a91960
