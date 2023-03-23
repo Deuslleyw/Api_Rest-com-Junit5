@@ -161,16 +161,13 @@ class UserServiceImplTest {
 
     @Test
     void  MustThrowTheExceptionObjectNotFoundExceptionOnDelete (){
+        var msgAtual = "Ops! Objeto não encontrado";
         when(repository.findById(anyInt())).thenThrow(new ObjectNotFoundException("Ops! Objeto não encontrado"));
 
-        try{
-            service.delete(ID);
-        }catch (Exception err){
-
-            assertEquals(ObjectNotFoundException.class, err.getClass());
-            assertEquals("Ops! Objeto não encontrado", err.getMessage());
-        }
-
+        var exceptionResponse = assertThrows(ObjectNotFoundException.class, () -> {
+           service.delete(ID);
+        });
+       assertEquals("Ops! Objeto não encontrado",msgAtual);
     }
 
     private void startUsers(){

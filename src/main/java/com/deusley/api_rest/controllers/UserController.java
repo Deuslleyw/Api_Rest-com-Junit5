@@ -27,14 +27,19 @@ public class UserController {
     @GetMapping(value = ID)
     public ResponseEntity<UserDTO> findById(@PathVariable Integer id){
 
-        return ResponseEntity.ok().body(mapper.map(service.findById(id), UserDTO.class));
+        var  user = service.findById(id);
+        var responseMapper = mapper.map(user, UserDTO.class);
+
+        return ResponseEntity.ok().body(responseMapper);
     }
 
     @GetMapping
     public ResponseEntity<List<UserDTO>> findAll() {
 
-        return ResponseEntity.ok().body(service.findAll()
-                .stream().map(x ->mapper.map(x,UserDTO.class)).collect(Collectors.toList()));
+       var response =  service.findAll().stream().map(x ->mapper.map
+                       (x,UserDTO.class)).collect(Collectors.toList());
+
+               return ResponseEntity.ok().body(response);
     }
 
     @PostMapping
@@ -44,11 +49,15 @@ public class UserController {
 
         return ResponseEntity.created(uri).build();
     }
+
     @PutMapping(value = ID)
     public ResponseEntity<UserDTO> update(@PathVariable Integer id, @RequestBody UserDTO obj){
         obj.setId(id);
 
-        return ResponseEntity.ok().body(mapper.map(service.update(obj), UserDTO.class));
+        var user = service.update(obj);
+        var responseMapper = mapper.map((obj), UserDTO.class);
+
+        return ResponseEntity.ok().body(obj);
 
     }
     @DeleteMapping(value = ID)

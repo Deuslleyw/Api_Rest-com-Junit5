@@ -17,6 +17,7 @@ linhas e métodos, garantindo a integridade e funcionalidade do sistema!
 
 * utilizadas:
 
+
 * [Intellij](https://www.jetbrains.com/pt-br/idea/) - IDE utilizada
 * [SpringBoot](https://spring.io/projects/spring-boot) - Framework Java
 
@@ -78,4 +79,3 @@ linhas e métodos, garantindo a integridade e funcionalidade do sistema!
 
 
 * Email: Deuslleyw@hotmail.com
-
