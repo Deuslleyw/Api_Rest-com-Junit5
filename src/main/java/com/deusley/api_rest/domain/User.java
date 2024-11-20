@@ -1,17 +1,11 @@
 package com.deusley.api_rest.domain;
 
 
-<<<<<<< HEAD
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-=======
-import lombok.*;
-import org.hibernate.Hibernate;
 
-import javax.persistence.*;
->>>>>>> e8b7943613ffa70f7274b5b7ec065f35be738692
 import java.util.Objects;
 
 @Builder
@@ -25,11 +19,7 @@ import java.util.Objects;
 public class User {
 
     @Id
-<<<<<<< HEAD
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-=======
     @GeneratedValue (strategy = GenerationType.IDENTITY)
->>>>>>> e8b7943613ffa70f7274b5b7ec065f35be738692
     private Integer id;
     private String name;
 
